@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="styles.css" />
+		<title>Solicitud de Contacto - Seguro No Pagamos Cooperativa</title>
+	</head>
+	<body>
+		<header>
+			<h1>Seguro No Pagamos Cooperativa</h1>
+			<p>Solicita un contacto y uno de nuestros asesores se comunicará contigo.</p>
+	</header>
+
+		<div class="formulario-container">
+			<form>
+					<label for="nombre">Nombre:</label>
+					<input type="text" id="nombre" name="nombre" required>
+
+					<label for="apellido">Apellido:</label>
+					<input type="text" id="apellido" name="apellido" required>
+
+					<label for="dni">DNI:</label>
+					<input type="text" id="dni" name="dni" required>
+
+					<label for="email">Email:</label>
+					<input type="email" id="email" name="email" required>
+
+					<label for="telefono">Teléfono:</label>
+					<input type="tel" id="telefono" name="telefono" required>
+
+					<label for="tipoSeguro">Tipo de Seguro:</label>
+					<select id="tipoSeguro" name="tipoSeguro" required>
+							<option value=""></option>
+							<option value="basico">Básico</option>
+							<option value="intermedio">Intermedio</option>
+							<option value="premium">Premium</option>
+					</select>
+					<p id="precioSeguro">Seleccione un tipo de seguro para ver su precio.</p>
+					<button type="submit">Solicitar Contacto</button>
+			</form>
+	</div>
+	<script src="main.js"></script>
+	</body>
+</html>
