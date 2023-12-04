@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<div class="container">
+			<h1>Clase 2 - Ejercitación</h1>
+			<h2>Ejercicio 1</h2>
+			<ol>
+				<li>
+					El tercer parámetro recibido es una función. Dicha función es ejecutada luego de realizar
+					realizar la suma los argumentos <b>a</b> y <b>b</b>
+				</li>
+				<li>
+					Este tipo de funciones se deben utilizar en situaciones donde se trabaja con operaciones
+					asíncronas. El callback permite especificar qué debe suceder después de que se haya
+					completado una operación, como una llamada a la base de datos.
+				</li>
+				<li>
+					<p>Un ejemplo puede ser:</p>
+					<code> suma(2,3, () => console.log("Suma completada")) </code>
+				</li>
+			</ol>
+			<h2>Ejercicio 2</h2>
+			<div class="calculadora">
+				<div class="operandos">
+					<input type="number" id="operando1" placeholder="Operando 1" />
+					<input type="number" id="operando2" placeholder="Operando 2" />
+				</div>
+				<div class="botones-operadores">
+					<button onclick="sumar()">Suma</button>
+					<button onclick="restar()">Resta</button>
+					<button onclick="multiplicar()">Multiplicación</button>
+					<button onclick="dividir()">División</button>
+				</div>
+				<input type="text" id="resultado" placeholder="Resultado" readonly />
+			</div>
+		</div>
+		<script src="main.js"></script>
+	</body>
+</html>
