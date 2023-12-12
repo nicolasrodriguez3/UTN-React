@@ -1,16 +1,15 @@
-import { useState } from "react"
-import Home from "./pages/Home"
 import Navbar from "./components/Navbar"
+import { Outlet } from "react-router-dom"
 
 function App() {
 	return (
 		<>
 			<Navbar />
-			<h1 className="text-center">Antito</h1>
-			<Home />
+			<main className="py-20 mx-auto container max-w-5xl">
+				<Outlet />
+			</main>
 		</>
 	)
 }
 
 export default App
-
