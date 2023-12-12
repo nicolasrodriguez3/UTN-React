@@ -1,11 +1,12 @@
 import { useState } from "react"
 import Home from "./pages/Home"
+import Navbar from "./components/Navbar"
 
 function App() {
-
 	return (
 		<>
-			<h1>Vite + React</h1>
+			<Navbar />
+			<h1 className="text-center">Antito</h1>
 			<Home />
 		</>
 	)
