@@ -1,9 +1,11 @@
 import { useState } from "react"
 import { useCartContext } from "../hooks/useCartContext"
+import useViewportWidth from "../hooks/useViewportWidth"
 
 const Cart = () => {
 	const [isOpen, setIsOpen] = useState(false)
 	const { cart, removeFromCart, clearCart, getTotalItems, getTotalPrice } = useCartContext()
+	const vw = useViewportWidth()
 
 	const toggleCart = () => {
 		setIsOpen((prevIsOpen) => !prevIsOpen)
@@ -38,7 +40,7 @@ const Cart = () => {
 			</button>
 
 			{isOpen && (
-				<div className="absolute top-0 end-0 mt-12 mr-4 min-w-[300px] bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg p-4 transition-all duration-300">
+				<div className={`${vw > 500 ? "mr-4" : "-mr-16"} absolute top-0 end-0 mt-12  min-w-[280px] bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg p-4 transition-all duration-300`}>
 					<h2 className="text-xl font-semibold mb-4">Carrito de Compras</h2>
 
 					{cart.length === 0 ? (
@@ -70,6 +72,13 @@ const Cart = () => {
 								<p className="text-lg">${getTotalPrice().toFixed(2)}</p>
 							</div>
 
+							<div className="mt-4">
+								<button
+									className="text-white bg-blue-500 hover:bg-blue-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2 text-center"
+									>
+									Comprar
+								</button>
+							</div>
 							<div className="mt-4">
 								<button
 									className="text-white bg-red-500 hover:bg-red-600 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2 text-center"

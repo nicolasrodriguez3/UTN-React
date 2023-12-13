@@ -5,8 +5,11 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import "./index.css"
 import ProductDetail from "./components/ProductDetail.jsx"
 import Home from "./pages/Home.jsx"
-import { CartContextProvider } from "./context/CartContext.jsx"
+import { CartProvider } from "./context/CartContext.jsx"
 import Login from "./pages/Login.jsx"
+import { AuthProvider } from "./context/AuthContext.jsx"
+import Register from "./pages/Register.jsx"
+import NotFound from "./pages/NotFound.jsx"
 
 const router = createBrowserRouter([
 	{
@@ -27,12 +30,22 @@ const router = createBrowserRouter([
 		path: "/login",
 		element: <Login />,
 	},
+	{
+		path: "/register",
+		element: <Register />,
+	},
+	{
+		path: "*",
+		element: <NotFound />
+	}
 ])
 
 ReactDOM.createRoot(document.getElementById("root")).render(
 	<React.StrictMode>
-		<CartContextProvider>
-			<RouterProvider router={router} />
-		</CartContextProvider>
+		<AuthProvider>
+			<CartProvider>
+				<RouterProvider router={router} />
+			</CartProvider>
+		</AuthProvider>
 	</React.StrictMode>
 )
